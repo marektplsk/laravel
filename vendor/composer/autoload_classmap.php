@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\DashboardController' => $baseDir . '/app/Http/Controllers/DashboardController.php',
+    'App\\Http\\Controllers\\ProfileController' => $baseDir . '/app/Http/Controllers/ProfileController.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
@@ -1660,6 +1662,7 @@ return array(
     'Illuminate\\Foundation\\Console\\InteractsWithComposerPackages' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/InteractsWithComposerPackages.php',
     'Illuminate\\Foundation\\Console\\InterfaceMakeCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php',
     'Illuminate\\Foundation\\Console\\JobMakeCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php',
+    'Illuminate\\Foundation\\Console\\JobMiddlewareMakeCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php',
     'Illuminate\\Foundation\\Console\\Kernel' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php',
     'Illuminate\\Foundation\\Console\\KeyGenerateCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php',
     'Illuminate\\Foundation\\Console\\LangPublishCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php',
@@ -2359,6 +2362,7 @@ return array(
     'Laravel\\Prompts\\Spinner' => $vendorDir . '/laravel/prompts/src/Spinner.php',
     'Laravel\\Prompts\\SuggestPrompt' => $vendorDir . '/laravel/prompts/src/SuggestPrompt.php',
     'Laravel\\Prompts\\Support\\Result' => $vendorDir . '/laravel/prompts/src/Support/Result.php',
+    'Laravel\\Prompts\\Support\\Utils' => $vendorDir . '/laravel/prompts/src/Support/Utils.php',
     'Laravel\\Prompts\\Table' => $vendorDir . '/laravel/prompts/src/Table.php',
     'Laravel\\Prompts\\Terminal' => $vendorDir . '/laravel/prompts/src/Terminal.php',
     'Laravel\\Prompts\\TextPrompt' => $vendorDir . '/laravel/prompts/src/TextPrompt.php',

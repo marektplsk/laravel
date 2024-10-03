@@ -505,6 +505,8 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
 
     public static $classMap = array (
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
+        'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
@@ -2158,6 +2160,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Illuminate\\Foundation\\Console\\InteractsWithComposerPackages' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/InteractsWithComposerPackages.php',
         'Illuminate\\Foundation\\Console\\InterfaceMakeCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/InterfaceMakeCommand.php',
         'Illuminate\\Foundation\\Console\\JobMakeCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php',
+        'Illuminate\\Foundation\\Console\\JobMiddlewareMakeCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/JobMiddlewareMakeCommand.php',
         'Illuminate\\Foundation\\Console\\Kernel' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php',
         'Illuminate\\Foundation\\Console\\KeyGenerateCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php',
         'Illuminate\\Foundation\\Console\\LangPublishCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/LangPublishCommand.php',
@@ -2857,6 +2860,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Laravel\\Prompts\\Spinner' => __DIR__ . '/..' . '/laravel/prompts/src/Spinner.php',
         'Laravel\\Prompts\\SuggestPrompt' => __DIR__ . '/..' . '/laravel/prompts/src/SuggestPrompt.php',
         'Laravel\\Prompts\\Support\\Result' => __DIR__ . '/..' . '/laravel/prompts/src/Support/Result.php',
+        'Laravel\\Prompts\\Support\\Utils' => __DIR__ . '/..' . '/laravel/prompts/src/Support/Utils.php',
         'Laravel\\Prompts\\Table' => __DIR__ . '/..' . '/laravel/prompts/src/Table.php',
         'Laravel\\Prompts\\Terminal' => __DIR__ . '/..' . '/laravel/prompts/src/Terminal.php',
         'Laravel\\Prompts\\TextPrompt' => __DIR__ . '/..' . '/laravel/prompts/src/TextPrompt.php',

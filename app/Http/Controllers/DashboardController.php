@@ -3,12 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post; 
+
+
 
 
 class DashboardController extends Controller
 {
     public function index() {
-        // Define the users array
+
+        $post = new Post([
+            'content' => "test 123",
+            'likes' => 15,
+        ]);
+
+        $post->save();
+
+        $posts = Post::take(3)->get(); // Limit to 3 posts
+
         $users = [
             [
                 'name' => 'Robert Burian',
@@ -26,7 +38,9 @@ class DashboardController extends Controller
         ]; 
         return view('Dashboard', 
         [
-            'users' => $users
+            'users' => $users, 
+            'posts' => Post::orderBy('likes', 'DESC')->get(), 
+
         ]); 
     }
 }

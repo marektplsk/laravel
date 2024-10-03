@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="EN">
+<html lang="en">
 
-@include('layout.header')
+@include('layout.header') <!-- Adjust path if necessary -->
 
 <body>
-   
-    {{-- tu includujeme nav- navabar--}}
-    @include('_template.nav')
- 
+    {{-- Include Navbar --}}
+    @include('_template.nav') <!-- Ensure this is correct, adjust path if necessary -->
 
     <div class="container py-4">
-        {{-- tu davame nas container, ktory je v dashboarde--}}
-
+        {{-- Content area for dashboard --}}
         @yield('content')
     </div>
-        @include('layout.footer')
+
+    @include('layout.footer') <!-- Adjust path if necessary -->
 </body>
 
 </html>
