@@ -9,6 +9,8 @@
 						@method('DELETE')
 						<button class="p-2 text-red-500 rounded-md border w-8 h-8 items-center justify-center flex">X</button>
 					</form>
+					<a href="{{ route('post.show', $post->id) }}" class="btn btn-primary">View Post</a>
+					<a href="{{ route('post.edit', $post->id) }}" class="btn btn-secondary">Edit</a>
 					<div>
 						<h5 class="card-title mb-0">
 							<a href="#">
