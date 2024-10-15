@@ -28,10 +28,6 @@ trait PreventsCircularRecursion
 
         $onceable = Onceable::tryFromTrace($trace, $callback);
 
-        if (is_null($onceable)) {
-            return call_user_func($callback);
-        }
-
         $stack = static::getRecursiveCallStack($this);
 
         if (array_key_exists($onceable->hash, $stack)) {

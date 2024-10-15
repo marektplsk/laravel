@@ -2,11 +2,9 @@
 
 namespace Illuminate\Cache;
 
-use BackedEnum;
 use Closure;
 use Illuminate\Contracts\Cache\Repository as Cache;
 use Illuminate\Support\InteractsWithTime;
-use UnitEnum;
 
 class RateLimiter
 {
@@ -40,15 +38,13 @@ class RateLimiter
     /**
      * Register a named limiter configuration.
      *
-     * @param  \BackedEnum|\UnitEnum|string  $name
+     * @param  string  $name
      * @param  \Closure  $callback
      * @return $this
      */
-    public function for($name, Closure $callback)
+    public function for(string $name, Closure $callback)
     {
-        $resolvedName = $this->resolveLimiterName($name);
-
-        $this->limiters[$resolvedName] = $callback;
+        $this->limiters[$name] = $callback;
 
         return $this;
     }
@@ -56,14 +52,12 @@ class RateLimiter
     /**
      * Get the given named rate limiter.
      *
-     * @param  \BackedEnum|\UnitEnum|string  $name
+     * @param  string  $name
      * @return \Closure|null
      */
-    public function limiter($name)
+    public function limiter(string $name)
     {
-        $resolvedName = $this->resolveLimiterName($name);
-
-        return $this->limiters[$resolvedName] ?? null;
+        return $this->limiters[$name] ?? null;
     }
 
     /**
@@ -253,20 +247,5 @@ class RateLimiter
     public function cleanRateLimiterKey($key)
     {
         return preg_replace('/&([a-z])[a-z]+;/i', '$1', htmlentities($key));
-    }
-
-    /**
-     * Resolve the rate limiter name.
-     *
-     * @param  \BackedEnum|\UnitEnum|string  $name
-     * @return string
-     */
-    private function resolveLimiterName($name): string
-    {
-        return match (true) {
-            $name instanceof BackedEnum => $name->value,
-            $name instanceof UnitEnum => $name->name,
-            default => (string) $name,
-        };
     }
 }
