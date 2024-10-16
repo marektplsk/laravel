@@ -30,14 +30,14 @@ class PostController extends Controller
 		return redirect()->route('dashboard')->with('success', 'Post bol zmazany');
 	}
 
-	public function show(Post $post)
+	public function show($id)
 	{
-		return view('posts.show', ['post' => $post]);
-	}
+		$post = Post::with('comments.user')->findOrFail($id);
+		return view('posts.show', compact('post'));
+	}	
 
 	public function edit(Post $post)
 	{
-		// Return the view for editing the post
 		return view('posts.edit', ['post' => $post]);
 	}
 
@@ -53,5 +53,7 @@ class PostController extends Controller
 
 		return redirect()->route('dashboard')->with('success', 'Post has been updated successfully');
 	}
+
+	
 
 }

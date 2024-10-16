@@ -52,8 +52,7 @@
 						<div class="d-flex justify-content-between">
 							<h6 class="">Luigi
 							</h6>
-							<small class="fs-6 fw-light text-muted"> 3 hour
-								ago</small>
+							<small class="fs-6 fw-light text-muted"> 3 nigger</small>
 						</div>
 						<p class="fs-6 mt-3 fw-light">
 							and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
