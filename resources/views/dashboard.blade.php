@@ -33,7 +33,7 @@
 				</ul>
 			</div>
 			<div class="card-footer text-center py-2">
-				<a class="btn btn-link btn-sm" href="#">View Profile </a>
+				<a class="btn btn-link btn-sm" href="#">Patrik Vrbovský </a>
 			</div>
 		</div>
 	</div>
@@ -66,17 +66,10 @@
 		@endforeach
 	</div>
 	<div class="col-3">
-		<div class="card">
-			<div class="card-header pb-0 border-0">
-				<h5 class="">Search</h5>
-			</div>
-			<div class="card-body">
-				<input placeholder="...
-				" class="form-control w-100" type="text"
-					id="search">
-				<button class="btn btn-dark mt-2"> Search</button>
-			</div>
-		</div>
+
+    <!-- Search bar -->
+	@include('inc.searchbar')
+
 		<div class="card mt-3">
 			<div class="card-header pb-0 border-0">
 				<h5 class="">Who to follow</h5>

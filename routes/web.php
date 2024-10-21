@@ -13,5 +13,7 @@ Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
 Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
 Route::put('/post/{post}', [PostController::class, 'update'])->name('post.update');
 Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 
 

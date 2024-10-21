@@ -7,6 +7,12 @@ class DashboardController extends Controller
 {
     public function index () {
 
+
+        $posts = Post::orderBy('created_at', 'DESC');
+        if (request()->has('search')){
+            $posts = $posts->where('content' , 'like' , '%' . request()->get('search' , '') . '%');
+        }
+        
         $users = [
             [
                 "name" => "Meno1",
@@ -26,7 +32,7 @@ class DashboardController extends Controller
             "dashboard",
             [
                 "users" => $users,
-				"posts" => Post::orderBy('created_at', 'DESC')->get(),
+				"posts" => $posts->paginate(5),
             ]
         );
     }
