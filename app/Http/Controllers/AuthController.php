@@ -18,8 +18,15 @@ class AuthController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:200',
-            'email' => 'required|string|email|max:200|unique:users', 
             'password' => 'required|string|min:8|confirmed',
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:200',
+                'unique:users',
+                'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$|^[a-zA-Z0-9._%+-]+@.+\.com$|^[a-zA-Z0-9._%+-]+@.+\.sk$/'
+            ]
         ], [
             'name.required' => 'No napis mi sem tvoje meno',
             'email.required' => 'Povedz si',
@@ -28,6 +35,7 @@ class AuthController extends Controller
             'password.required' => 'Kde je heslo?',
             'password.min' => 'no minimalne 8 chars jaaaj',
             'password.confirmed' => 'je to ppopicii nematchuju sa',
+            'email.regex' => 'email ti nepojde, pretoze neexistuje ;D'
         ]);
 
         User::create([
@@ -52,7 +60,7 @@ class AuthController extends Controller
             return redirect('/profile')->with('success', 'Si prihlaseny :D!');
         }
 
-        return redirect()->back()->withErrors('Nespravne Credentials');
+        return redirect()->back()->withErrors('Nespravne Credentials N-E-E-X-I-S-T-U-J-E!');
     }
 
     public function logout()
