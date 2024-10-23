@@ -10,7 +10,7 @@ class CommentController extends Controller
     public function store(Request $request, $postId)
     {
         $validatedData = $request->validate([
-            'content' => 'required|string|max:10',
+            'content' => 'required|string|max:1000',
         ]);
 
         if (!session()->has('guest_id')) {

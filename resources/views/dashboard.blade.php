@@ -1,110 +1,117 @@
 @extends('layout.layout')
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+<!-- Search bar more -->
+<div class="row mb-4">
+    <div class="col-12">
+        @include('inc.searchbar') 
+    </div>
+</div>
 
 <div class="row">
-	<div class="col-3">
-		<div class="card overflow-hidden">
-			<div class="card-body pt-3">
-				<ul class="nav nav-link-secondary flex-column fw-bold gap-2">
-					<li class="nav-item">
-						<a class="nav-link text-dark" href="#">
-							<span>Home</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							<span>Explore</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							<span>Feed</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							<span>Terms</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							<span>Support</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							<span>Settings</span></a>
-					</li>
-				</ul>
-			</div>
-			<div class="card-footer text-center py-2">
-				<a class="btn btn-link btn-sm" href="#">Patrik Vrbovský </a>
-			</div>
-		</div>
-	</div>
-	<div class="col-6">
-		@if (session()->has('success'))
-			<div class="alert alert-success alert-dismissible fade show" role="alert">
-				{{ session()->get('success') }}
-				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			</div>
-		@endif
+    <div class="col-3">
+        <div class="card overflow-hidden">
+            <div class="card-body pt-3">
+                <ul class="nav nav-link-secondary flex-column fw-bold gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">
+                            <span>Bengoro</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span>Kral</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span>Fenomén</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span>Flow Kmeť</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span>E.R.A.</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span>V dolinách</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer text-center py-2">
+                <a class="btn btn-link btn-sm" href="#">Patrik Vrbovský </a>
+            </div>
+        </div>
+    </div>
 
-		<h4> Share yours ideas </h4>
-		<div class="row">
-			<form action="{{ route('post.create') }}" method="POST">
-				@csrf
-				<div class="mb-3">
-					<textarea class="form-control" id="idea" name="content" rows="3"></textarea>
-					@error('content')
-						<div class="alert alert-danger">{{ $message }}</div>
-					@enderror
-				</div>
-				<div class="">
-					<button class="btn btn-dark"> Share </button>
-				</div>
-			</form>
-		</div>
-		<hr>
-		@foreach ($posts as $post)
-			@include('inc.post')
-		@endforeach
-	</div>
-	<div class="col-3">
+    <div class="col-6">
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session()->get('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
 
-    <!-- Search bar -->
-	@include('inc.searchbar')
+        <h4> Share yours ideas </h4>
+        <div class="row">
+            <form action="{{ route('post.create') }}" method="POST">
+                @csrf
+                <div class="mb-3">
+                    <textarea class="form-control" id="idea" name="content" rows="3"></textarea>
+                    @error('content')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="">
+                    <button class="btn btn-dark"> Share </button>
+                </div>
+            </form>
+        </div>
+        <hr>
+        @foreach ($posts as $post)
+            @include('inc.post')
+        @endforeach
+    </div>
 
-		<div class="card mt-3">
-			<div class="card-header pb-0 border-0">
-				<h5 class="">Who to follow</h5>
-			</div>
-			<div class="card-body">
-				<div class="hstack gap-2 mb-3">
-					<div class="avatar">
-						<a href="#!"><img class="avatar-img rounded-circle"
-								src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt=""></a>
-					</div>
-					<div class="overflow-hidden">
-						<a class="h6 mb-0" href="#!">Mario Brother</a>
-						<p class="mb-0 small text-truncate">@Mario</p>
-					</div>
-					<a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
-							class="fa-solid fa-plus"> </i></a>
-				</div>
-				<div class="hstack gap-2 mb-3">
-					<div class="avatar">
-						<a href="#!"><img class="avatar-img rounded-circle"
-								src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt=""></a>
-					</div>
-					<div class="overflow-hidden">
-						<a class="h6 mb-0" href="#!">Mario Brother</a>
-						<p class="mb-0 small text-truncate">@Mario</p>
-					</div>
-					<a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
-							class="fa-solid fa-plus"> </i></a>
-				</div>
-				<div class="d-grid mt-3">
-					<a class="btn btn-sm btn-primary-soft" href="#!">Show More</a>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="col-3">
+        <div class="card mt-3">
+            <div class="card-header pb-0 border-0">
+                <h5 class="">Who to follow</h5>
+            </div>
+            <div class="card-body">
+                <div class="hstack gap-2 mb-3">
+                    <div class="avatar">
+                        <a href="#!"><img class="avatar-img rounded-circle"
+                                src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt=""></a>
+                    </div>
+                    <div class="overflow-hidden">
+                        <a class="h6 mb-0" href="#!">Mario Brother</a>
+                        <p class="mb-0 small text-truncate">@Mario</p>
+                    </div>
+                    <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
+                            class="fa-solid fa-plus"> </i></a>
+                </div>
+                <div class="hstack gap-2 mb-3">
+                    <div class="avatar">
+                        <a href="#!"><img class="avatar-img rounded-circle"
+                                src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt=""></a>
+                    </div>
+                    <div class="overflow-hidden">
+                        <a class="h6 mb-0" href="#!">Mario Brother</a>
+                        <p class="mb-0 small text-truncate">@Mario</p>
+                    </div>
+                    <a class="btn btn-primary-soft rounded-circle icon-md ms-auto" href="#"><i
+                            class="fa-solid fa-plus"> </i></a>
+                </div>
+                <div class="d-grid mt-3">
+                    <a class="btn btn-sm btn-primary-soft" href="#!">Show More</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @endsection
